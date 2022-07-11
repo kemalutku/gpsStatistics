@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		39E4421B2879B87000DB08C1 /* gpsStatisticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */; };
-		39E4421D2879B87000DB08C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4421C2879B87000DB08C1 /* ContentView.swift */; };
+		39E4421D2879B87000DB08C1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4421C2879B87000DB08C1 /* HomeView.swift */; };
 		39E4421F2879B87200DB08C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E4421E2879B87200DB08C1 /* Assets.xcassets */; };
 		39E442222879B87200DB08C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E442212879B87200DB08C1 /* Preview Assets.xcassets */; };
+		39E6E117287C54240025ADAF /* Speedometer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E116287C54240025ADAF /* Speedometer.swift */; };
+		39E6E119287C54510025ADAF /* HomeGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E118287C54510025ADAF /* HomeGraph.swift */; };
+		39E6E11B287C57C10025ADAF /* SpeedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E11A287C57C10025ADAF /* SpeedTable.swift */; };
+		39E6E11E287C580E0025ADAF /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E11D287C580E0025ADAF /* Measurement.swift */; };
+		39E6E120287C5A550025ADAF /* ApplicationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E11F287C5A550025ADAF /* ApplicationStatus.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		39E442172879B87000DB08C1 /* gpsStatistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gpsStatistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsStatisticsApp.swift; sourceTree = "<group>"; };
-		39E4421C2879B87000DB08C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		39E4421C2879B87000DB08C1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		39E4421E2879B87200DB08C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		39E442212879B87200DB08C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		39E6E116287C54240025ADAF /* Speedometer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Speedometer.swift; sourceTree = "<group>"; };
+		39E6E118287C54510025ADAF /* HomeGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGraph.swift; sourceTree = "<group>"; };
+		39E6E11A287C57C10025ADAF /* SpeedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTable.swift; sourceTree = "<group>"; };
+		39E6E11D287C580E0025ADAF /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
+		39E6E11F287C5A550025ADAF /* ApplicationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStatus.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +61,8 @@
 		39E442192879B87000DB08C1 /* gpsStatistics */ = {
 			isa = PBXGroup;
 			children = (
+				39E6E114287C53920025ADAF /* Views */,
 				39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */,
-				39E4421C2879B87000DB08C1 /* ContentView.swift */,
 				39E4421E2879B87200DB08C1 /* Assets.xcassets */,
 				39E442202879B87200DB08C1 /* Preview Content */,
 			);
@@ -65,6 +75,35 @@
 				39E442212879B87200DB08C1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		39E6E114287C53920025ADAF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				39E6E115287C53FB0025ADAF /* Widgets */,
+				39E4421C2879B87000DB08C1 /* HomeView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		39E6E115287C53FB0025ADAF /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				39E6E11C287C57ED0025ADAF /* SpeedTable */,
+				39E6E116287C54240025ADAF /* Speedometer.swift */,
+				39E6E118287C54510025ADAF /* HomeGraph.swift */,
+				39E6E11F287C5A550025ADAF /* ApplicationStatus.swift */,
+			);
+			path = Widgets;
+			sourceTree = "<group>";
+		};
+		39E6E11C287C57ED0025ADAF /* SpeedTable */ = {
+			isa = PBXGroup;
+			children = (
+				39E6E11A287C57C10025ADAF /* SpeedTable.swift */,
+				39E6E11D287C580E0025ADAF /* Measurement.swift */,
+			);
+			path = SpeedTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +176,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39E4421D2879B87000DB08C1 /* ContentView.swift in Sources */,
+				39E6E11B287C57C10025ADAF /* SpeedTable.swift in Sources */,
+				39E6E117287C54240025ADAF /* Speedometer.swift in Sources */,
+				39E6E11E287C580E0025ADAF /* Measurement.swift in Sources */,
+				39E6E119287C54510025ADAF /* HomeGraph.swift in Sources */,
+				39E4421D2879B87000DB08C1 /* HomeView.swift in Sources */,
 				39E4421B2879B87000DB08C1 /* gpsStatisticsApp.swift in Sources */,
+				39E6E120287C5A550025ADAF /* ApplicationStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
