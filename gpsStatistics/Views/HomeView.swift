@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftUICharts
 
 struct ContentView: View {
     @ObservedObject var gpsController: GPSController
@@ -13,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Speedometer(speed: $gpsController.navSpeed)
-            HomeGraph()
+            HomeGraph(data: gpsController.previewData())
             SpeedTable()
             ApplicationStatus()
         }
@@ -25,8 +26,10 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     @StateObject static var gpsController = GPSController()
-    
+
     static var previews: some View {
-        ContentView(gpsController: gpsController)
+        ContentView(
+            gpsController: gpsController
+        )
     }
 }

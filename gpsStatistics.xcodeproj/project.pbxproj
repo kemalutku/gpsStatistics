@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390D63A8287F300500C31F3C /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 390D63A7287F300500C31F3C /* SwiftUICharts */; };
 		39E4421B2879B87000DB08C1 /* gpsStatisticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */; };
 		39E4421D2879B87000DB08C1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4421C2879B87000DB08C1 /* HomeView.swift */; };
 		39E4421F2879B87200DB08C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E4421E2879B87200DB08C1 /* Assets.xcassets */; };
@@ -38,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390D63A8287F300500C31F3C /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +135,9 @@
 			dependencies = (
 			);
 			name = gpsStatistics;
+			packageProductDependencies = (
+				390D63A7287F300500C31F3C /* SwiftUICharts */,
+			);
 			productName = gpsStatistics;
 			productReference = 39E442172879B87000DB08C1 /* gpsStatistics.app */;
 			productType = "com.apple.product-type.application";
@@ -161,6 +166,9 @@
 				Base,
 			);
 			mainGroup = 39E4420E2879B87000DB08C1;
+			packageReferences = (
+				390D63A6287F300500C31F3C /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
+			);
 			productRefGroup = 39E442182879B87000DB08C1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -397,6 +405,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		390D63A6287F300500C31F3C /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/willdale/SwiftUICharts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		390D63A7287F300500C31F3C /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 390D63A6287F300500C31F3C /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 39E4420F2879B87000DB08C1 /* Project object */;
 }

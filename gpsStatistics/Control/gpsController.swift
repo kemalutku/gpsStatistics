@@ -8,6 +8,8 @@
 import Foundation
 import CoreLocation
 
+import SwiftUICharts
+
 class GPSController: NSObject,ObservableObject, CLLocationManagerDelegate {
     
     private let locationManager = CLLocationManager()
@@ -50,5 +52,18 @@ class GPSController: NSObject,ObservableObject, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
     }
     
+    func previewData() -> LineChartData {
+        let data = LineDataSet(dataPoints: [
+            LineChartDataPoint(value: 0.0),
+            LineChartDataPoint(value: 5.2),
+            LineChartDataPoint(value: 17.7),
+            LineChartDataPoint(value: 25.5),
+            LineChartDataPoint(value: 39.3),
+            LineChartDataPoint(value: 55.1),
+            LineChartDataPoint(value: 70.0),
+            LineChartDataPoint(value: 100.0)
+        ])
+        return LineChartData(dataSets: data)
+    }
 }
 
