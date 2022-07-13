@@ -18,6 +18,7 @@
 		39E6E11E287C580E0025ADAF /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E11D287C580E0025ADAF /* Measurement.swift */; };
 		39E6E120287C5A550025ADAF /* ApplicationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E11F287C5A550025ADAF /* ApplicationStatus.swift */; };
 		39E6E125287C6A890025ADAF /* gpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E124287C6A890025ADAF /* gpsController.swift */; };
+		722817F8287F42A80026CCF4 /* SpeedRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 722817F7287F42A80026CCF4 /* SpeedRun.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		39E6E11D287C580E0025ADAF /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		39E6E11F287C5A550025ADAF /* ApplicationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStatus.swift; sourceTree = "<group>"; };
 		39E6E124287C6A890025ADAF /* gpsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsController.swift; sourceTree = "<group>"; };
+		722817F7287F42A80026CCF4 /* SpeedRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedRun.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 		39E442192879B87000DB08C1 /* gpsStatistics */ = {
 			isa = PBXGroup;
 			children = (
+				722817F6287F42940026CCF4 /* Model */,
 				39E6E121287C69E10025ADAF /* Control */,
 				39E6E114287C53920025ADAF /* Views */,
 				39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */,
@@ -117,6 +120,14 @@
 				39E6E124287C6A890025ADAF /* gpsController.swift */,
 			);
 			path = Control;
+			sourceTree = "<group>";
+		};
+		722817F6287F42940026CCF4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				722817F7287F42A80026CCF4 /* SpeedRun.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +213,7 @@
 				39E6E125287C6A890025ADAF /* gpsController.swift in Sources */,
 				39E4421D2879B87000DB08C1 /* HomeView.swift in Sources */,
 				39E4421B2879B87000DB08C1 /* gpsStatisticsApp.swift in Sources */,
+				722817F8287F42A80026CCF4 /* SpeedRun.swift in Sources */,
 				39E6E120287C5A550025ADAF /* ApplicationStatus.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,18 +8,21 @@
 import SwiftUI
 
 struct Measurement: View {
+    
+    @Binding var timeCounter: Double
     var body: some View {
         VStack {
             Text("0 - 100 KM/H")
                 .padding(.top)
-            Text("0.0 sn")
+            Text(String(Double(timeCounter)) + " sn")
                 .padding(.bottom)
         }
     }
 }
 
 struct Measurement_Previews: PreviewProvider {
+    @State static var timeCounter = 0.0
     static var previews: some View {
-        Measurement()
+        Measurement(timeCounter: $timeCounter)
     }
 }

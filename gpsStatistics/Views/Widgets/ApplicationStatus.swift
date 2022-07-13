@@ -8,20 +8,33 @@
 import SwiftUI
 
 struct ApplicationStatus: View {
+    @Binding var temo: Bool
+    @Binding var startTime: Date
+    
     var body: some View {
         HStack {
             Spacer()
-            Text("Ready !")
+            VStack {
+                Button("Ready") {
+                    temo = !temo
+                    startTime = Date.now
+                    print(startTime)
+                }
+            }
             Spacer()
+            
+            
         }
         .padding()
         .font(.title)
-        
+    
     }
 }
 
 struct ApplicationStatus_Previews: PreviewProvider {
+    @State static var appStatus = false
+    @State static var startTime = Date.now
     static var previews: some View {
-        ApplicationStatus()
+        ApplicationStatus(temo: $appStatus,startTime: $startTime)
     }
 }

@@ -8,19 +8,21 @@
 import SwiftUI
 
 struct SpeedTable: View {
+    @Binding var timeCounter: Double
+    
     var body: some View {
         HStack {
             Spacer()
             VStack {
-                Measurement()
-                Measurement()
-                Measurement()
+                Measurement(timeCounter: $timeCounter)
+                Measurement(timeCounter: $timeCounter)
+                Measurement(timeCounter: $timeCounter)
             }
             Spacer()
             VStack {
-                Measurement()
-                Measurement()
-                Measurement()
+                Measurement(timeCounter: $timeCounter)
+                Measurement(timeCounter: $timeCounter)
+                Measurement(timeCounter: $timeCounter)
             }
             Spacer()
         }
@@ -29,7 +31,8 @@ struct SpeedTable: View {
 }
 
 struct SpeedTable_Previews: PreviewProvider {
+    @State static var timeCounter = 0.0
     static var previews: some View {
-        SpeedTable()
+        SpeedTable(timeCounter: $timeCounter)
     }
 }
