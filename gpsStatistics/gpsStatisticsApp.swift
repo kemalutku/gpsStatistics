@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct gpsStatisticsApp: App {
+    @StateObject var gpsController = GPSController()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(gpsController: gpsController)
         }
     }
 }

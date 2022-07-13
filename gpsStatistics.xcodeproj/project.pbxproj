@@ -16,6 +16,7 @@
 		39E6E11B287C57C10025ADAF /* SpeedTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E11A287C57C10025ADAF /* SpeedTable.swift */; };
 		39E6E11E287C580E0025ADAF /* Measurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E11D287C580E0025ADAF /* Measurement.swift */; };
 		39E6E120287C5A550025ADAF /* ApplicationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E11F287C5A550025ADAF /* ApplicationStatus.swift */; };
+		39E6E125287C6A890025ADAF /* gpsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E6E124287C6A890025ADAF /* gpsController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		39E6E11A287C57C10025ADAF /* SpeedTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedTable.swift; sourceTree = "<group>"; };
 		39E6E11D287C580E0025ADAF /* Measurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Measurement.swift; sourceTree = "<group>"; };
 		39E6E11F287C5A550025ADAF /* ApplicationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationStatus.swift; sourceTree = "<group>"; };
+		39E6E124287C6A890025ADAF /* gpsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		39E442192879B87000DB08C1 /* gpsStatistics */ = {
 			isa = PBXGroup;
 			children = (
+				39E6E121287C69E10025ADAF /* Control */,
 				39E6E114287C53920025ADAF /* Views */,
 				39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */,
 				39E4421E2879B87200DB08C1 /* Assets.xcassets */,
@@ -104,6 +107,14 @@
 				39E6E11D287C580E0025ADAF /* Measurement.swift */,
 			);
 			path = SpeedTable;
+			sourceTree = "<group>";
+		};
+		39E6E121287C69E10025ADAF /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				39E6E124287C6A890025ADAF /* gpsController.swift */,
+			);
+			path = Control;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 				39E6E117287C54240025ADAF /* Speedometer.swift in Sources */,
 				39E6E11E287C580E0025ADAF /* Measurement.swift in Sources */,
 				39E6E119287C54510025ADAF /* HomeGraph.swift in Sources */,
+				39E6E125287C6A890025ADAF /* gpsController.swift in Sources */,
 				39E4421D2879B87000DB08C1 /* HomeView.swift in Sources */,
 				39E4421B2879B87000DB08C1 /* gpsStatisticsApp.swift in Sources */,
 				39E6E120287C5A550025ADAF /* ApplicationStatus.swift in Sources */,
@@ -314,6 +326,7 @@
 				DEVELOPMENT_TEAM = HKSS25886Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -343,6 +356,7 @@
 				DEVELOPMENT_TEAM = HKSS25886Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

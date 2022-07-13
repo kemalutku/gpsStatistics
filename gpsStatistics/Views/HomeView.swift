@@ -8,18 +8,25 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var gpsController: GPSController
+    
     var body: some View {
         VStack {
-            Speedometer()
+            Speedometer(speed: $gpsController.navSpeed)
             HomeGraph()
             SpeedTable()
             ApplicationStatus()
+        }
+        .onAppear{
+            gpsController.requestNavPermission()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
+    @StateObject static var gpsController = GPSController()
+    
     static var previews: some View {
-        ContentView()
+        ContentView(gpsController: gpsController)
     }
 }
