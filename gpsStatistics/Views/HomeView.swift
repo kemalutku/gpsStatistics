@@ -15,8 +15,8 @@ struct ContentView: View {
         VStack {
             Speedometer(speed: $gpsController.navSpeed)
             HomeGraph(data: gpsController.previewData())
-            SpeedTable()
-            ApplicationStatus()
+            SpeedTable(timeCounter: $gpsController.timeCounter)
+            ApplicationStatus(temo: $gpsController.applicationIsRunning,startTime: $gpsController.startTime)
         }
         .onAppear{
             gpsController.requestNavPermission()

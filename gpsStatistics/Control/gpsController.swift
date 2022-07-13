@@ -14,6 +14,9 @@ class GPSController: NSObject,ObservableObject, CLLocationManagerDelegate {
     
     private let locationManager = CLLocationManager()
     @Published var navSpeed = 0.0
+    var startTime = Date.now
+    var applicationIsRunning = false
+    var timeCounter = 0.0
     
     override init() {
         super.init()
@@ -42,6 +45,9 @@ class GPSController: NSObject,ObservableObject, CLLocationManagerDelegate {
         guard let location = locations.last else {return}
         self.navSpeed = location.speed * 3.6
         // let altitude = location.altitude
+        print(self.applicationIsRunning)
+        print(self.startTime)
+        calculateSpeedometerValues()
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -65,5 +71,18 @@ class GPSController: NSObject,ObservableObject, CLLocationManagerDelegate {
         ])
         return LineChartData(dataSets: data)
     }
+    
+    func calculateSpeedometerValues(){
+        
+        if(self.navSpeed<=50.0){
+            self.timeCounter = 9.0
+        }
+        else if(self.navSpeed>50.0)
+        {
+            self.timeCounter = 16.0
+        }
+        
+    }
+    
 }
 
