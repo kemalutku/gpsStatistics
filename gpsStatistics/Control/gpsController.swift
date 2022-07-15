@@ -12,11 +12,13 @@ class GPSController: NSObject,ObservableObject, CLLocationManagerDelegate {
     
     @Published var navSpeed = 0.0
     @Published var altitude = 0.0
+    @Published var currentRun = SpeedRun()
     
     private let locationManager = CLLocationManager()
 
-    var startTime = Date.now
     var applicationIsRunning = false
+    var startTime = Date.now
+    
     var timeCounter = 0.0
     
     override init() {
@@ -26,6 +28,16 @@ class GPSController: NSObject,ObservableObject, CLLocationManagerDelegate {
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.last else {return}
+        self.navSpeed = location.speed * 3.6
+        self.altitude = location.altitude
+        if applicationIsRunning {
+            self.currentRun.addDataPoint(speed: self.navSpeed, timeStamp: location.timestamp)
+        }
+        calculateSpeedometerValues()
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -42,13 +54,6 @@ class GPSController: NSObject,ObservableObject, CLLocationManagerDelegate {
         }
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else {return}
-        self.navSpeed = location.speed * 3.6
-        self.altitude = location.altitude
-        calculateSpeedometerValues()
-    }
-    
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
     }
@@ -62,7 +67,7 @@ class GPSController: NSObject,ObservableObject, CLLocationManagerDelegate {
         if(self.navSpeed<=50.0){
             self.timeCounter = 9.0
         }
-        else if(self.navSpeed>50.0)
+        else if(self.navSpeed > 50.0)
         {
             self.timeCounter = 16.0
         }

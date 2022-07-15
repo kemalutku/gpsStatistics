@@ -21,6 +21,7 @@ struct NavgationButtonsView: View {
             }
             .padding(.horizontal)
             .font(.system(.title))
+            .buttonStyle(.plain)
             Spacer()
         }
     }

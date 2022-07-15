@@ -18,7 +18,7 @@ struct ContentView: View {
                     NavgationButtonsView()
                     Speedometer(speed: $gpsController.navSpeed, altitude: $gpsController.altitude)
                 }
-                HomeGraph()
+                HomeGraph(modelData: $gpsController.currentRun)
                 SpeedTable(timeCounter: $gpsController.timeCounter)
                 ApplicationStatus(temo: $gpsController.applicationIsRunning,startTime: $gpsController.startTime)
             }

@@ -19,6 +19,7 @@ struct LineGraph: View {
     var gridXLineCount = 2
     var gridYFrequency = 2.0
     
+    
     var highestPoint: Double {
         let max = speedPoints.max() ?? 1.0
         if max == 0 {return 1.0}
@@ -37,25 +38,42 @@ struct LineGraph: View {
             let width = geometry.size.width
             let widthPadding = width * widthPaddingRatio
             
+            let validModel = speedPoints.count > 1 ? true : false
+            
             // Draw data points
-            Path { path in
-                path.move(to: CGPoint(x:widthPadding, y: height * self.heightRatio(for: 0)))
+            if validModel {
+                Path { path in
+                    path.move(to: CGPoint(x:widthPadding, y: height * self.heightRatio(for: 0)))
+                    for index in 1..<timePoints.count {
+                        path.addLine(to: CGPoint(
+                            x: width * (1 - widthPaddingRatio) * self.widthRatio(for: index),
+                            y: height * self.heightRatio(for: index)
+                        ))
+                    }
+                }
+                .stroke(Color.accentColor, style: StrokeStyle(lineWidth: 2, lineJoin: .round))
                 
-//                for index in 1..<speedPoints.count {
-//                    path.addLine(to: CGPoint(
-//                        x: CGFloat(index) * width * (1 - widthPaddingRatio) / CGFloat(speedPoints.count - 1),
-//                        y: height * self.heightRatio(for: index)
-//                    ))
-//                }
-                
-                for index in 1..<timePoints.count {
-                    path.addLine(to: CGPoint(
-                        x: width * (1 - widthPaddingRatio) * self.widthRatio(for: index),
-                        y: height * self.heightRatio(for: index)
-                    ))
+                // draw grid
+                if grid {
+                    Path { path in
+                        // x axis grid
+                        for yLine in 1...gridXLineCount {
+                            let yVal = CGFloat(height / Double(gridXLineCount + 1) * Double(yLine))
+                            path.move(to: CGPoint(x: widthPadding,y: yVal))
+                            path.addLine(to: CGPoint(x: width - widthPadding, y: yVal))
+                        }
+                        
+                        let xSpacing = timePoints.max() ?? 0.0 / gridYFrequency + 1.0
+                        for xLine in 1...Int(xSpacing) - 1 {
+                            let xVal = CGFloat((width - 2 * widthPadding) / xSpacing * Double(xLine))
+                            path.move(to:CGPoint(x: widthPadding + xVal, y: 0))
+                            path.addLine(to: CGPoint(x: widthPadding + xVal, y: height))
+                            
+                        }
+                    }
+                    .stroke(Color.gray, style: StrokeStyle(lineWidth: 0.5, lineJoin: .round))
                 }
             }
-            .stroke(Color.accentColor, style: StrokeStyle(lineWidth: 2, lineJoin: .round))
             
             // Draw x,y axises
             Path { path in
@@ -68,29 +86,6 @@ struct LineGraph: View {
                 path.addLine(to: CGPoint(x: widthPadding, y: 0))
             }
             .stroke(Color.black, style: StrokeStyle(lineWidth: 1, lineJoin: .round))
-            
-            // draw grid
-            if grid {
-                Path { path in
-                    // x axis grid
-                    for yLine in 1...gridXLineCount {
-                        let yVal = CGFloat(height / Double(gridXLineCount + 1) * Double(yLine))
-                        path.move(to: CGPoint(x: widthPadding,y: yVal))
-                        path.addLine(to: CGPoint(x: width - widthPadding, y: yVal))
-                    }
-                    
-                    let xSpacing = timePoints.max() ?? 0.0 / gridYFrequency + 1.0
-                    for xLine in 1...Int(xSpacing)-1 {
-                        let xVal = CGFloat((width - 2 * widthPadding) / xSpacing * Double(xLine))
-                        path.move(to:CGPoint(x: widthPadding + xVal, y: 0))
-                        path.addLine(to: CGPoint(x: widthPadding + xVal, y: height))
-                        
-                    }
-                }
-                .stroke(Color.gray, style: StrokeStyle(lineWidth: 0.5, lineJoin: .round))
-            }
-            
-            
         }
         .padding(.vertical)
     }
