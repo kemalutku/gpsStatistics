@@ -14,7 +14,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Speedometer(speed: $gpsController.navSpeed)
-            HomeGraph(data: gpsController.previewData())
+            HomeGraph()
             SpeedTable(timeCounter: $gpsController.timeCounter)
             ApplicationStatus(temo: $gpsController.applicationIsRunning,startTime: $gpsController.startTime)
         }

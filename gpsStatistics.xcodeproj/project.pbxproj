@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		390D63A8287F300500C31F3C /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = 390D63A7287F300500C31F3C /* SwiftUICharts */; };
+		39CD302128818342002F78F8 /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CD302028818342002F78F8 /* LineGraph.swift */; };
 		39E4421B2879B87000DB08C1 /* gpsStatisticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */; };
 		39E4421D2879B87000DB08C1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4421C2879B87000DB08C1 /* HomeView.swift */; };
 		39E4421F2879B87200DB08C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 39E4421E2879B87200DB08C1 /* Assets.xcassets */; };
@@ -22,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		39CD302028818342002F78F8 /* LineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
 		39E442172879B87000DB08C1 /* gpsStatistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gpsStatistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsStatisticsApp.swift; sourceTree = "<group>"; };
 		39E4421C2879B87000DB08C1 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -41,13 +42,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				390D63A8287F300500C31F3C /* SwiftUICharts in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39CD301B2881826E002F78F8 /* Graphing */ = {
+			isa = PBXGroup;
+			children = (
+				39CD302028818342002F78F8 /* LineGraph.swift */,
+			);
+			path = Graphing;
+			sourceTree = "<group>";
+		};
 		39E4420E2879B87000DB08C1 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +105,7 @@
 		39E6E115287C53FB0025ADAF /* Widgets */ = {
 			isa = PBXGroup;
 			children = (
+				39CD301B2881826E002F78F8 /* Graphing */,
 				39E6E11C287C57ED0025ADAF /* SpeedTable */,
 				39E6E116287C54240025ADAF /* Speedometer.swift */,
 				39E6E118287C54510025ADAF /* HomeGraph.swift */,
@@ -147,7 +156,6 @@
 			);
 			name = gpsStatistics;
 			packageProductDependencies = (
-				390D63A7287F300500C31F3C /* SwiftUICharts */,
 			);
 			productName = gpsStatistics;
 			productReference = 39E442172879B87000DB08C1 /* gpsStatistics.app */;
@@ -178,7 +186,6 @@
 			);
 			mainGroup = 39E4420E2879B87000DB08C1;
 			packageReferences = (
-				390D63A6287F300500C31F3C /* XCRemoteSwiftPackageReference "SwiftUICharts" */,
 			);
 			productRefGroup = 39E442182879B87000DB08C1 /* Products */;
 			projectDirPath = "";
@@ -212,6 +219,7 @@
 				39E6E119287C54510025ADAF /* HomeGraph.swift in Sources */,
 				39E6E125287C6A890025ADAF /* gpsController.swift in Sources */,
 				39E4421D2879B87000DB08C1 /* HomeView.swift in Sources */,
+				39CD302128818342002F78F8 /* LineGraph.swift in Sources */,
 				39E4421B2879B87000DB08C1 /* gpsStatisticsApp.swift in Sources */,
 				722817F8287F42A80026CCF4 /* SpeedRun.swift in Sources */,
 				39E6E120287C5A550025ADAF /* ApplicationStatus.swift in Sources */,
@@ -417,25 +425,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		390D63A6287F300500C31F3C /* XCRemoteSwiftPackageReference "SwiftUICharts" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/willdale/SwiftUICharts";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		390D63A7287F300500C31F3C /* SwiftUICharts */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 390D63A6287F300500C31F3C /* XCRemoteSwiftPackageReference "SwiftUICharts" */;
-			productName = SwiftUICharts;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 39E4420F2879B87000DB08C1 /* Project object */;
 }

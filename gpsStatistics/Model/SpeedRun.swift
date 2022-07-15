@@ -22,4 +22,10 @@ class SpeedRun{
         self.speedData.append(speed)
         self.gpsTimeStamps.append(timeStamp)
     }
+    
+    func setRunData(speedData: [Double], timestamps: [Date]) {
+        self.speedData = speedData
+        self.gpsTimeStamps = timestamps
+    }
+    
 }
