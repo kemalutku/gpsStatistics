@@ -10,8 +10,11 @@ import CoreLocation
 
 class GPSController: NSObject,ObservableObject, CLLocationManagerDelegate {
     
-    private let locationManager = CLLocationManager()
     @Published var navSpeed = 0.0
+    @Published var altitude = 0.0
+    
+    private let locationManager = CLLocationManager()
+
     var startTime = Date.now
     var applicationIsRunning = false
     var timeCounter = 0.0
@@ -42,7 +45,7 @@ class GPSController: NSObject,ObservableObject, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else {return}
         self.navSpeed = location.speed * 3.6
-        // let altitude = location.altitude
+        self.altitude = location.altitude
         calculateSpeedometerValues()
     }
     

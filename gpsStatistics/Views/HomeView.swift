@@ -12,15 +12,36 @@ struct ContentView: View {
     @ObservedObject var gpsController: GPSController
     
     var body: some View {
-        VStack {
-            Speedometer(speed: $gpsController.navSpeed)
-            HomeGraph()
-            SpeedTable(timeCounter: $gpsController.timeCounter)
-            ApplicationStatus(temo: $gpsController.applicationIsRunning,startTime: $gpsController.startTime)
+        NavigationView {
+            VStack {
+                ZStack {
+                    NavgationButtonsView()
+                    Speedometer(speed: $gpsController.navSpeed, altitude: $gpsController.altitude)
+                }
+                HomeGraph()
+                SpeedTable(timeCounter: $gpsController.timeCounter)
+                ApplicationStatus(temo: $gpsController.applicationIsRunning,startTime: $gpsController.startTime)
+            }
+            .onAppear{
+                gpsController.requestNavPermission()
+            }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
-        .onAppear{
-            gpsController.requestNavPermission()
-        }
+    }
+}
+
+struct HiddenNavigationBar: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarHidden(true)
+    }
+}
+
+extension View {
+    func hiddenNavigationBarStyle() -> some View {
+        modifier( HiddenNavigationBar() )
     }
 }
 

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		392B03272881CE4600154A68 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B03262881CE4600154A68 /* SettingsView.swift */; };
+		392B03292881D06200154A68 /* NavgationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B03282881D06200154A68 /* NavgationButtons.swift */; };
+		392B032E2881D0E200154A68 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B032D2881D0E200154A68 /* RecordsView.swift */; };
 		39CD302128818342002F78F8 /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CD302028818342002F78F8 /* LineGraph.swift */; };
 		39E4421B2879B87000DB08C1 /* gpsStatisticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */; };
 		39E4421D2879B87000DB08C1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4421C2879B87000DB08C1 /* HomeView.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		392B03262881CE4600154A68 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		392B03282881D06200154A68 /* NavgationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavgationButtons.swift; sourceTree = "<group>"; };
+		392B032D2881D0E200154A68 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
 		39CD302028818342002F78F8 /* LineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
 		39E442172879B87000DB08C1 /* gpsStatistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gpsStatistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsStatisticsApp.swift; sourceTree = "<group>"; };
@@ -98,6 +104,8 @@
 			children = (
 				39E6E115287C53FB0025ADAF /* Widgets */,
 				39E4421C2879B87000DB08C1 /* HomeView.swift */,
+				392B03262881CE4600154A68 /* SettingsView.swift */,
+				392B032D2881D0E200154A68 /* RecordsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 				39E6E116287C54240025ADAF /* Speedometer.swift */,
 				39E6E118287C54510025ADAF /* HomeGraph.swift */,
 				39E6E11F287C5A550025ADAF /* ApplicationStatus.swift */,
+				392B03282881D06200154A68 /* NavgationButtons.swift */,
 			);
 			path = Widgets;
 			sourceTree = "<group>";
@@ -220,9 +229,12 @@
 				39E6E125287C6A890025ADAF /* gpsController.swift in Sources */,
 				39E4421D2879B87000DB08C1 /* HomeView.swift in Sources */,
 				39CD302128818342002F78F8 /* LineGraph.swift in Sources */,
+				392B032E2881D0E200154A68 /* RecordsView.swift in Sources */,
 				39E4421B2879B87000DB08C1 /* gpsStatisticsApp.swift in Sources */,
 				722817F8287F42A80026CCF4 /* SpeedRun.swift in Sources */,
 				39E6E120287C5A550025ADAF /* ApplicationStatus.swift in Sources */,
+				392B03272881CE4600154A68 /* SettingsView.swift in Sources */,
+				392B03292881D06200154A68 /* NavgationButtons.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
