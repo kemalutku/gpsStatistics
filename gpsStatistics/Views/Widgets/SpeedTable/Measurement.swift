@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct Measurement: View {
+    var rangeObject: RunRange
     
-    @Binding var timeCounter: Double
     var body: some View {
         VStack {
-            Text("0 - 100 KM/H")
+            Text(String(Int(rangeObject.minVal)) + " - " + String(Int(rangeObject.maxVal)) + rangeObject.unit)
                 .padding(.top)
-            Text(String(Double(timeCounter)) + " sn")
+            Text(String(rangeObject.completionTime) + " sec.")
                 .padding(.bottom)
-        }
+            }
     }
 }
 
+
 struct Measurement_Previews: PreviewProvider {
-    @State static var timeCounter = 0.0
+    static var rangeObject = RunRange(minVal: 0.0, maxVal: 100.0, unit: "kmh", completionTime: 0.0)
     static var previews: some View {
-        Measurement(timeCounter: $timeCounter)
+        Measurement(rangeObject: rangeObject)
     }
 }

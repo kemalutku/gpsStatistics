@@ -10,6 +10,8 @@
 		392B03272881CE4600154A68 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B03262881CE4600154A68 /* SettingsView.swift */; };
 		392B03292881D06200154A68 /* NavgationButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B03282881D06200154A68 /* NavgationButtons.swift */; };
 		392B032E2881D0E200154A68 /* RecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 392B032D2881D0E200154A68 /* RecordsView.swift */; };
+		39901AB82882BAC800F9250D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39901AB72882BAC800F9250D /* SettingsController.swift */; };
+		39901ABB2882BB0D00F9250D /* RunRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39901ABA2882BB0D00F9250D /* RunRange.swift */; };
 		39CD302128818342002F78F8 /* LineGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CD302028818342002F78F8 /* LineGraph.swift */; };
 		39E4421B2879B87000DB08C1 /* gpsStatisticsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */; };
 		39E4421D2879B87000DB08C1 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E4421C2879B87000DB08C1 /* HomeView.swift */; };
@@ -29,6 +31,8 @@
 		392B03282881D06200154A68 /* NavgationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavgationButtons.swift; sourceTree = "<group>"; };
 		392B032D2881D0E200154A68 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
 		392B032F2881D47E00154A68 /* Nurburgring.gpx */ = {isa = PBXFileReference; lastKnownFileType = text; path = Nurburgring.gpx; sourceTree = "<group>"; };
+		39901AB72882BAC800F9250D /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		39901ABA2882BB0D00F9250D /* RunRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunRange.swift; sourceTree = "<group>"; };
 		39CD302028818342002F78F8 /* LineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
 		39E442172879B87000DB08C1 /* gpsStatistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gpsStatistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39E4421A2879B87000DB08C1 /* gpsStatisticsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gpsStatisticsApp.swift; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		39901AB92882BAEB00F9250D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				39901AB72882BAC800F9250D /* SettingsController.swift */,
+				39901ABA2882BB0D00F9250D /* RunRange.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		39CD301B2881826E002F78F8 /* Graphing */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +150,7 @@
 		39E6E121287C69E10025ADAF /* Control */ = {
 			isa = PBXGroup;
 			children = (
+				39901AB92882BAEB00F9250D /* Settings */,
 				39E6E124287C6A890025ADAF /* gpsController.swift */,
 			);
 			path = Control;
@@ -230,10 +244,12 @@
 				39E6E119287C54510025ADAF /* HomeGraph.swift in Sources */,
 				39E6E125287C6A890025ADAF /* gpsController.swift in Sources */,
 				39E4421D2879B87000DB08C1 /* HomeView.swift in Sources */,
+				39901ABB2882BB0D00F9250D /* RunRange.swift in Sources */,
 				39CD302128818342002F78F8 /* LineGraph.swift in Sources */,
 				392B032E2881D0E200154A68 /* RecordsView.swift in Sources */,
 				39E4421B2879B87000DB08C1 /* gpsStatisticsApp.swift in Sources */,
 				722817F8287F42A80026CCF4 /* SpeedRun.swift in Sources */,
+				39901AB82882BAC800F9250D /* SettingsController.swift in Sources */,
 				39E6E120287C5A550025ADAF /* ApplicationStatus.swift in Sources */,
 				392B03272881CE4600154A68 /* SettingsView.swift in Sources */,
 				392B03292881D06200154A68 /* NavgationButtons.swift in Sources */,

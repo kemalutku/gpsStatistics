@@ -10,10 +10,14 @@ import SwiftUI
 @main
 struct gpsStatisticsApp: App {
     @StateObject var gpsController = GPSController()
+    @StateObject var settingsController = SettingsController()
     
     var body: some Scene {
         WindowGroup {
-            ContentView(gpsController: gpsController)
+            ContentView(
+                gpsController: gpsController,
+                settingsController: settingsController
+            )
         }
     }
 }

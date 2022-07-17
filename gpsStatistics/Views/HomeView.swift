@@ -10,6 +10,7 @@ import SwiftUICharts
 
 struct ContentView: View {
     @ObservedObject var gpsController: GPSController
+    @ObservedObject var settingsController: SettingsController
     
     var body: some View {
         NavigationView {
@@ -19,7 +20,7 @@ struct ContentView: View {
                     Speedometer(speed: $gpsController.navSpeed, altitude: $gpsController.altitude)
                 }
                 HomeGraph(modelData: $gpsController.currentRun)
-                SpeedTable(timeCounter: $gpsController.timeCounter)
+                SpeedTable(speedRanges: $settingsController.speedRanges, distanceRanges: $settingsController.distanceRanges)
                 ApplicationStatus(temo: $gpsController.applicationIsRunning,startTime: $gpsController.startTime)
             }
             .onAppear{
@@ -47,10 +48,12 @@ extension View {
 
 struct ContentView_Previews: PreviewProvider {
     @StateObject static var gpsController = GPSController()
+    @StateObject static var settingsController = SettingsController()
 
     static var previews: some View {
         ContentView(
-            gpsController: gpsController
+            gpsController: gpsController,
+            settingsController: settingsController
         )
     }
 }

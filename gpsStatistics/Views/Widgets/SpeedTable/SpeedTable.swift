@@ -8,21 +8,22 @@
 import SwiftUI
 
 struct SpeedTable: View {
-    @Binding var timeCounter: Double
+    @Binding var speedRanges: [RunRange]
+    @Binding var distanceRanges: [RunRange]
     
     var body: some View {
         HStack {
             Spacer()
             VStack {
-                Measurement(timeCounter: $timeCounter)
-                Measurement(timeCounter: $timeCounter)
-                Measurement(timeCounter: $timeCounter)
+                ForEach(speedRanges, id: \.self) {speed in
+                    Measurement(rangeObject: speed)
+                }
             }
             Spacer()
             VStack {
-                Measurement(timeCounter: $timeCounter)
-                Measurement(timeCounter: $timeCounter)
-                Measurement(timeCounter: $timeCounter)
+                ForEach(distanceRanges, id: \.self) {distance in
+                    Measurement(rangeObject: distance)
+                }
             }
             Spacer()
         }
@@ -31,8 +32,18 @@ struct SpeedTable: View {
 }
 
 struct SpeedTable_Previews: PreviewProvider {
-    @State static var timeCounter = 0.0
+    @State static var speedRanges = [
+        RunRange(minVal: 0.0, maxVal: 50.0, unit: "kmh", completionTime: 0.0),
+        RunRange(minVal: 50.0, maxVal: 100.0, unit: "kmh", completionTime: 0.0),
+        RunRange(minVal: 100.0, maxVal: 200.0, unit: "kmh", completionTime: 0.0)
+    ]
+    @State static var distanceRanges = [
+        RunRange(minVal: 0.0, maxVal: 100.0, unit: "m", completionTime: 0.0),
+        RunRange(minVal: 0.0, maxVal: 200.0, unit: "m", completionTime: 0.0),
+        RunRange(minVal: 0.0, maxVal: 400.0, unit: "m", completionTime: 0.0)
+    ]
+    
     static var previews: some View {
-        SpeedTable(timeCounter: $timeCounter)
+        SpeedTable(speedRanges: $speedRanges, distanceRanges: $distanceRanges)
     }
 }
