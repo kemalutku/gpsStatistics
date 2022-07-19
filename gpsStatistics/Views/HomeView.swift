@@ -40,11 +40,6 @@ struct HiddenNavigationBar: ViewModifier {
     }
 }
 
-extension View {
-    func hiddenNavigationBarStyle() -> some View {
-        modifier( HiddenNavigationBar() )
-    }
-}
 
 struct ContentView_Previews: PreviewProvider {
     @StateObject static var gpsController = GPSController()

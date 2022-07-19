@@ -13,19 +13,41 @@ struct SpeedTable: View {
     
     var body: some View {
         HStack {
-            Spacer()
-            VStack {
-                ForEach(speedRanges, id: \.self) {speed in
-                    Measurement(rangeObject: speed)
+            if speedRanges.count > 3 || distanceRanges.count > 3 {
+                Spacer()
+                ScrollView {
+                    VStack {
+                        ForEach(speedRanges, id: \.self) {speed in
+                            Measurement(rangeObject: speed)
+                        }
+                    }
                 }
-            }
-            Spacer()
-            VStack {
-                ForEach(distanceRanges, id: \.self) {distance in
-                    Measurement(rangeObject: distance)
+                Spacer()
+                ScrollView {
+                    VStack {
+                        ForEach(distanceRanges, id: \.self) {distance in
+                            Measurement(rangeObject: distance)
+                        }
+                    }
                 }
+                Spacer()
             }
-            Spacer()
+            else {
+                Spacer()
+                VStack {
+                    ForEach(speedRanges, id: \.self) {speed in
+                        Measurement(rangeObject: speed)
+                    }
+                }
+                Spacer()
+                VStack {
+                    ForEach(distanceRanges, id: \.self) {distance in
+                        Measurement(rangeObject: distance)
+                    }
+                }
+                Spacer()
+            }
+            
         }
         
     }
@@ -35,7 +57,10 @@ struct SpeedTable_Previews: PreviewProvider {
     @State static var speedRanges = [
         RunRange(minVal: 0.0, maxVal: 50.0, unit: "kmh", completionTime: 0.0),
         RunRange(minVal: 50.0, maxVal: 100.0, unit: "kmh", completionTime: 0.0),
-        RunRange(minVal: 100.0, maxVal: 200.0, unit: "kmh", completionTime: 0.0)
+        RunRange(minVal: 100.0, maxVal: 200.0, unit: "kmh", completionTime: 0.0),
+        RunRange(minVal: 50.0, maxVal: 100.0, unit: "kmh", completionTime: 0.0),
+        RunRange(minVal: 100.0, maxVal: 200.0, unit: "kmh", completionTime: 0.0),
+    
     ]
     @State static var distanceRanges = [
         RunRange(minVal: 0.0, maxVal: 100.0, unit: "m", completionTime: 0.0),

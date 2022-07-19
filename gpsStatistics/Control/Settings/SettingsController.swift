@@ -19,7 +19,11 @@ class SettingsController: ObservableObject {
         self.speedRanges = [
             RunRange(minVal: 0.0, maxVal: 50.0, unit: "kmh", completionTime: 0.0),
             RunRange(minVal: 50.0, maxVal: 100.0, unit: "kmh", completionTime: 0.0),
-            RunRange(minVal: 100.0, maxVal: 200.0, unit: "kmh", completionTime: 0.0)
+            RunRange(minVal: 100.0, maxVal: 200.0, unit: "kmh", completionTime: 0.0),
+            RunRange(minVal: 50.0, maxVal: 100.0, unit: "kmh", completionTime: 0.0),
+            RunRange(minVal: 100.0, maxVal: 200.0, unit: "kmh", completionTime: 0.0),
+            RunRange(minVal: 50.0, maxVal: 100.0, unit: "kmh", completionTime: 0.0),
+            RunRange(minVal: 100.0, maxVal: 200.0, unit: "kmh", completionTime: 0.0),
         ]
         // Default distance ranges
         self.distanceRanges = [

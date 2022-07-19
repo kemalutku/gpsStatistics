@@ -30,7 +30,6 @@
 		392B03262881CE4600154A68 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		392B03282881D06200154A68 /* NavgationButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavgationButtons.swift; sourceTree = "<group>"; };
 		392B032D2881D0E200154A68 /* RecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordsView.swift; sourceTree = "<group>"; };
-		392B032F2881D47E00154A68 /* Nurburgring.gpx */ = {isa = PBXFileReference; lastKnownFileType = text; path = Nurburgring.gpx; sourceTree = "<group>"; };
 		39901AB72882BAC800F9250D /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		39901ABA2882BB0D00F9250D /* RunRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunRange.swift; sourceTree = "<group>"; };
 		39CD302028818342002F78F8 /* LineGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineGraph.swift; sourceTree = "<group>"; };
@@ -79,7 +78,6 @@
 		39E4420E2879B87000DB08C1 = {
 			isa = PBXGroup;
 			children = (
-				392B032F2881D47E00154A68 /* Nurburgring.gpx */,
 				39E442192879B87000DB08C1 /* gpsStatistics */,
 				39E442182879B87000DB08C1 /* Products */,
 			);
